@@ -1,0 +1,54 @@
+{
+    "name": "jose13/larave-linebot-lottery",
+    "description": "line-bot lotteryCrawler",
+    "authors": [
+        {
+            "name": "jose13",
+            "email": "q98654@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.4",
+        "ext-http": "*",
+        "ext-json": "*",
+        "fabpot/goutte": "^4.0",
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/framework": "^8.12",
+        "laravel/tinker": "^2.5",
+        "linecorp/line-bot-sdk": "^7.0",
+        "symfony/browser-kit": "^5.3.4",
+        "symfony/css-selector": "^5.2",
+        "symfony/dom-crawler": "^v5.3.4"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jose13\\LaravelLineBotLottery\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jose13\\LaravelLineBotLottery\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jose13\\LaravelLineBotLottery\\LinebotServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
