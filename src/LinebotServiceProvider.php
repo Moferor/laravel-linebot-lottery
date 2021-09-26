@@ -17,9 +17,6 @@ class LinebotServiceProvider extends ServiceProvider
 
         $this->app->make(LineWebhookController::class);
 
-//        $this->mergeConfigFrom(
-//            __DIR__.'/../config/LineBotServiceConfig.php', 'LineBotServiceConfig'
-//        );
         $this->mergeConfigFrom(
             __DIR__.'/../config/LineBotServiceConfig.php', 'LineBotServiceConfig'
         );
