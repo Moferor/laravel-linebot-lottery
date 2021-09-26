@@ -50,8 +50,8 @@ class LineWebhookControllerTest extends TestCase
             ->andReturn($content);
 
         try {
-            $hook = new LineWebhookController($Container,$CheckSignatureService, $LineBotService);
-            $response = $hook->webhook($this->Request);
+            $hook = new LineWebhookController();
+            $response = $hook->webhook($this->Request,$Container,$CheckSignatureService, $LineBotService);
         } catch (Exception $e) {
             $response = $e->getMessage();
         }
