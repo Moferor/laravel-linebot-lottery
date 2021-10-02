@@ -2,28 +2,21 @@
 
 use LINE\LINEBot\Constant\MessageType;
 
-/*
- * 預設開啟quickReply按鈕的關鍵字
- */
-$openQuickButtonText = '開啟服務';
 
 return [
-
     /*
- |------------------------------------------------------------------------------------------------------
- | 路由
- |------------------------------------------------------------------------------------------------------
- | 各支援的event、Factory以及event子服務路由
- |
-*/
-
+     |------------------------------------------------------------------------------------------------------
+     | 路徑
+     |------------------------------------------------------------------------------------------------------
+     | 各支援的event、Factory、服務以及event子服務路由
+     |
+    */
     'ClassRoute' => [
-
         'message' =>
             [
                 'Event' => 'Jose13\LaravelLineBotLottery\Services\LineSupportEvents\EventsType\TheMessageEvent',
                 'Factory' => 'Jose13\LaravelLineBotLottery\Services\Factory\MessageEventTypeFactory',
-                //messageTpe Response class Route key名稱 參照 line-bot-sdk  LINE\LINEBot\Constant\MessageType text location..
+                //支援messageTpe Response的classRoute，key名稱 參照 line-bot-sdk  LINE\LINEBot\Constant\MessageType text location..
                 //創建class時 字首大寫+Response
                 'text' => 'Jose13\LaravelLineBotLottery\Services\LineSupportEvents\EventsType\MessageEventType\TextResponse'
             ],
@@ -31,7 +24,8 @@ return [
             [
                 'Event' => 'Jose13\LaravelLineBotLottery\Services\LineSupportEvents\EventsType\ThePostbackEvent',
                 'Factory' => 'Jose13\LaravelLineBotLottery\Services\Factory\PostbackTypeWithGameFactory',
-                //postback action Response class Route
+                //支援postback action Response的classRoute
+                //創建class時 字首大寫+Action
                 'DateTimePickQuickAction' => 'Jose13\LaravelLineBotLottery\Services\LineSupportEvents\EventsType\PostbackActionType\DateTimePickQuickAction',
                 'NormalQuickAction' => 'Jose13\LaravelLineBotLottery\Services\LineSupportEvents\EventsType\PostbackActionType\NormalQuickAction',
             ],
@@ -115,37 +109,44 @@ return [
      |------------------------------------------------------------------------------------------------------
      | 設定對應的文字回應
      |------------------------------------------------------------------------------------------------------
-     | 各房間回應訊息內容
+     | QuickReplyButtonName : 為開啟 快速回復按鈕的關鍵字 可自行更改
+     | Available : 為各房間型別是否啟用或是關閉快速回覆按鈕功能，如果選擇false關閉，Line 輸入 QuickReplyButtonName 關鍵字，將不會有任何反應
+     | ResponseContent : 各房間類型的自定義回應內容
+     |
      | 不想啟用開啟quickReply按鈕 $openQuickButtonText 設定為false
      |
     */
 
-    'TextResponse' => [
+    'TextResponse' =>
+        [
+            'QuickReplyButtonName' => '開啟服務',
 
-        // 給LineEventsService\MessageEventType\TextResponse 確認輸入的文字是否為預設開啟quickReply按鈕的關鍵字用的;
-        'quickReplyButton' => $openQuickButtonText,
+            'Available' =>
+                [
+                    'UserChats' => true,
+                    'GroupChats' => true,
+                    'RoomChats' => true,
+                ],
 
-
-        'UserChats' =>
-            [
-                $openQuickButtonText => true, //bool true/false || false = 關掉快速回應按鈕服務
-                'hello' => 'hi',
-                '你幾歲' => '10歲'
-
-            ],
-        'GroupChats' =>
-            [
-                $openQuickButtonText => true,
-                'hello' => '你好阿',
-                '你幾歲' => '秘密哦'
-            ],
-        'RoomChats' =>
-            [
-                $openQuickButtonText => true,
-                'hello' => 'YO',
-                '你幾歲' => '永遠18歲'
-            ]
-    ],
+            'ResponseContent' =>
+                [
+                    'UserChats' =>
+                        [
+                            'hello' => 'hi',
+                            '吃飽沒' => '吃了一公斤的鐵了!'
+                        ],
+                    'GroupChats' =>
+                        [
+                            'hello' => '你好阿',
+                            '吃飽沒' => '我吃了10%的用電量了'
+                        ],
+                    'RoomChats' =>
+                        [
+                            'hello' => 'YO',
+                            '吃飽沒' => '我是機器人不會餓!'
+                        ],
+                ]
+        ],
 
 
     /*
@@ -241,11 +242,10 @@ return [
             'GameDrewTime' => '遊戲獎項開獎時間如下:' . PHP_EOL . '威力彩:禮拜一、禮拜四' . PHP_EOL . '大樂透:禮拜二、禮拜五' . PHP_EOL . '今彩539:禮拜一 ~ 禮拜六',
 
             'WelcomeTipMessage' =>
-                '歡迎使使用LotteryMan!' . PHP_EOL .
-                '根據聊天室種類的不同，' . PHP_EOL .
-                '支援的按鈕功能及文字訊息回覆，' . PHP_EOL .
-                '將依照管理員設置而有所不同，' . PHP_EOL .
-                'LotteryMan加入時將會提示。' . PHP_EOL
+                '歡迎使使用LotteryBot!' . PHP_EOL .
+                '依據聊天室種類的不同，' . PHP_EOL .
+                '按鈕功能及文字訊息回覆，' . PHP_EOL .
+                '將依照管理員設置而有所不同。' . PHP_EOL
         ]
 
 

@@ -40,21 +40,20 @@ trait WelcomeMessageHandle
         $welcomeTipMessage = config("LineBotServiceConfig.DefaultTipText.WelcomeTipMessage");
         $gameDrawTime = config("LineBotServiceConfig.DefaultTipText.GameDrewTime");
 
-        $chatZhTW = ($this->chatType == 'UserChats') ? '"單人房"' : ($this->chatType == 'GroupChats' ? '"群組"' : '"聊天室"');
+        $chatZhTW = ($this->chatType == 'UserChats') ? '"個人聊天室"' : ($this->chatType == 'GroupChats' ? '"群組聊天室"' : '"多人聊天室"');
 
         if (!$supportFeatures) {
             $supportFeatures = '抱歉，管理員於設定中沒有開放按鈕功能';
         }
 
         return
-            'LotteryMan 進入了 ' . ' ' . $chatZhTW . PHP_EOL . PHP_EOL .
             $welcomeTipMessage . PHP_EOL .
+            '此為：' . ' ' . $chatZhTW . PHP_EOL . PHP_EOL.
             '支援的服務按鈕功能為 :' . PHP_EOL . $supportFeatures . PHP_EOL .
             $gameDrawTime . PHP_EOL . PHP_EOL .
             '各服務功能獲取資料時，' . PHP_EOL .
             '請等候約0~5秒。' . PHP_EOL .
-            '想要開啟服務進行抓牌嗎!?' . PHP_EOL .
-            '立刻輸入 : ' . ' ' . '開啟服務';
+            '開始使用請輸入 : ' . ' ' . '開啟服務';
 
 
     }
