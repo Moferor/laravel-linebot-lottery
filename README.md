@@ -33,7 +33,7 @@
 
 ![Webhook設定](docs/Webhook設定.png)
 
-將 Line 回應設定成下圖，設定網址 [LINE Official Account Manager](https://manager.line.biz/account/@002xwgzm/setting/response) :
+將 Line 回應設定成下圖 :
 
 ![Line回應設定](docs/Line回應設定.png)
 
