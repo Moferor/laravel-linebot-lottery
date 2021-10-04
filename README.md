@@ -23,7 +23,7 @@
 頻道，可以參考 [官方教學](https://developers.line.biz/zh-hant/docs/messaging-api/getting-started/) 。
 > 創建完成後進入頻道頁面
 
-![設定頁面項目](docs/設定項目頁面.png)  
+<img src="https://user-images.githubusercontent.com/16284391/135816978-0e7d351f-df9a-4874-b136-8c27b8a2456a.png" style="width:60%">
 
 記下頻道頁面中 `Basic setting` 選項裡，`Channel secret` 產生的數值。
 
@@ -31,11 +31,12 @@
 
 頻道頁面中 `Messaging API` 選項裡，設定 Webhook :
 
-![Webhook設定](docs/Webhook設定.png)
+
+<img src="https://user-images.githubusercontent.com/16284391/135817170-e5c9fe14-c806-4208-850f-cbfb0498022b.png" style="width:60%">
 
 將 Line 回應設定成下圖 :
 
-![Line回應設定](docs/Line回應設定.png)
+<img src="https://user-images.githubusercontent.com/16284391/135817242-436a5d10-5cb7-4279-b25e-8667707e8c07.png" style="width:60%">
 
 ### 創建一個 Laravel 專案
 
@@ -193,7 +194,15 @@ php artisan vendor:publish --provider=Jose13\\LaravelLineBotLottery\\LinebotServ
 
 歡迎訊息、文字回應、QuickReply按鈕功能開啟
 
+https://user-images.githubusercontent.com/16284391/135817631-0bac0616-23cf-407e-b2ac-7b9cfe357508.mp4
+
 一般請求資訊服務按鈕
 
+https://user-images.githubusercontent.com/16284391/135817645-71f30e3b-5cd9-478b-9dcc-37a418b99efe.mp4
+
+
 指定日期請求服務按鈕
+
+https://user-images.githubusercontent.com/16284391/135817661-18059d7d-ddfe-4676-b987-a65e43a07eeb.mp4
+
 
