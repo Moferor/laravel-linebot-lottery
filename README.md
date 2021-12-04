@@ -1,6 +1,6 @@
 # laravel-linebot-lottery
 
-[![packagist](https://img.shields.io/packagist/v/jose13/larave-linebot-lottery?color=orange)](https://packagist.org/packages/jose13/larave-linebot-lottery)
+[![packagist](https://img.shields.io/packagist/v/jose13/larave-linebot-lottery?color=orange&include_prereleases)](https://packagist.org/packages/jose13/larave-linebot-lottery)
 [![WSL](https://img.shields.io/badge/platform-windows%20%7C%20linux-blue)](https://packagist.org/packages/jose13/larave-linebot-lottery)
 [![laravel](https://img.shields.io/badge/laravel-%5E8.0-green)](https://packagist.org/packages/jose13/larave-linebot-lottery)
 [![php Version](https://img.shields.io/packagist/php-v/jose13/larave-linebot-lottery)](https://packagist.org/packages/jose13/larave-linebot-lottery)
